@@ -1,6 +1,7 @@
 import { createServer } from 'http';
 import express from 'express';
 import { ApolloServer, gql } from 'apollo-server-express';
+const { config } = require('../config');
 
 const startServer = async () => {
   const app = express();
@@ -27,11 +28,11 @@ const startServer = async () => {
 
   apolloServer.applyMiddleware({
     app,
-    path: '/api',
+    path: `/api/${config.environment}`,
   });
 
-  httpServer.listen({ port: process.env.PORT || 4000 }, () =>
-    console.log(`Server listening on localhost:4000${apolloServer.graphqlPath}`),
+  httpServer.listen({ port: config.port }, () =>
+    console.log(`Server listening on localhost:${config.port}${apolloServer.graphqlPath}`),
   );
 };
 
