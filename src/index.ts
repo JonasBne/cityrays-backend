@@ -30,11 +30,11 @@ const startServer = async () => {
 
   apolloServer.applyMiddleware({
     app,
-    path: `/api/${config.environment}`,
+    path: '/api/graphql',
   });
 
   httpServer.listen({ port: config.port }, () =>
-    console.log(`Server listening on localhost:${config.port}${apolloServer.graphqlPath}`),
+    console.log(`Server listening on http://localhost:${config.port}${apolloServer.graphqlPath}`),
   );
 };
 
