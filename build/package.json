@@ -1,0 +1,33 @@
+{
+    "name": "cityrays-backend",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "dev": "nodemon",
+        "build": "tsc",
+        "start": "node build/index.js",
+        "cleanup": "rimraf ./build"
+    },
+    "author": "Jonas Boone",
+    "license": "ISC",
+    "devDependencies": {
+        "@typescript-eslint/eslint-plugin": "^5.30.6",
+        "@typescript-eslint/parser": "^5.30.6",
+        "eslint": "^8.19.0",
+        "eslint-config-airbnb-base": "^15.0.0",
+        "eslint-plugin-import": "^2.26.0",
+        "nodemon": "^2.0.19",
+        "prettier": "^2.7.1",
+        "rimraf": "^3.0.2",
+        "ts-node": "^10.9.1",
+        "typescript": "^4.7.4"
+    },
+    "dependencies": {
+        "apollo-server-express": "^3.10.0",
+        "express": "^4.18.1",
+        "graphql": "^16.5.0",
+        "dotenv": "^16.0.1"
+    }
+}
