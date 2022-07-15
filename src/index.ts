@@ -1,7 +1,7 @@
 import { createServer } from 'http';
 import express from 'express';
 import { ApolloServer, gql } from 'apollo-server-express';
-const { config } = require('../config');
+import { config } from './config';
 
 // https://www.tomray.dev/setup-and-deploy-graphql-server#build-your-database-schema-with-prisma
 
