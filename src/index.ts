@@ -3,6 +3,8 @@ import express from 'express';
 import { ApolloServer, gql } from 'apollo-server-express';
 const { config } = require('../config');
 
+// https://www.tomray.dev/setup-and-deploy-graphql-server#build-your-database-schema-with-prisma
+
 const startServer = async () => {
   const app = express();
   const httpServer = createServer(app);
