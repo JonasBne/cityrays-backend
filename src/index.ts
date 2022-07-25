@@ -3,6 +3,10 @@ import { ApolloServer, gql } from 'apollo-server-express';
 import { config } from './config';
 import pkg from '../package.json';
 
+// TODO: NEXT STEPS
+// create a schema: https://www.graphql-tools.com/docs/introduction
+// test the resolvers
+
 const startServer = async () => {
   const app = express();
 
