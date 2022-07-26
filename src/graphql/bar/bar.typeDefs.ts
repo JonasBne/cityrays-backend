@@ -1,7 +1,7 @@
 import { gql } from 'apollo-server-express';
 
-export const cafeTypeDefs = gql`
-  type Cafe {
+export const barTypeDefs = gql`
+  type Bar {
     id: ID!
     name: String!
     street: String!
@@ -13,6 +13,7 @@ export const cafeTypeDefs = gql`
   }
 
   type Query {
-    findAllCafes: [Cafe!]!
+    getAllBars: [Bar!]!
+    getSingleBar(id: ID!): Bar
   }
 `;

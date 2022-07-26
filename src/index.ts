@@ -2,6 +2,7 @@ import express from 'express';
 import { ApolloServer, gql } from 'apollo-server-express';
 import { config } from './config';
 import pkg from '../package.json';
+import { schema } from './graphql/schema';
 
 // TODO: NEXT STEPS
 // create a schema: https://www.graphql-tools.com/docs/introduction
@@ -14,21 +15,10 @@ const startServer = async () => {
     res.json({ name: 'cityrays-backend', version: pkg.version });
   });
 
-  const typeDefs = gql`
-    type Query {
-      hello: String
-    }
-  `;
-
-  const resolvers = {
-    Query: {
-      hello: () => 'Hello world 9999!',
-    },
-  };
-
   const apolloServer = new ApolloServer({
-    typeDefs,
-    resolvers,
+    schema,
+    formatError: (error) => error,
+    introspection: true,
   });
 
   await apolloServer.start();
