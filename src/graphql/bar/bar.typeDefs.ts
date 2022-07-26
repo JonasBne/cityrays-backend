@@ -13,7 +13,7 @@ export const barTypeDefs = gql`
   }
 
   type Query {
-    getAllBars: [Bar!]!
-    getSingleBar(id: ID!): Bar
+    bars: [Bar!]!
+    bar(id: ID!): Bar
   }
 `;

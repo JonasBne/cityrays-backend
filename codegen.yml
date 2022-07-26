@@ -1,0 +1,9 @@
+schema:
+  - src/graphql/bar/bar.typeDefs.ts
+generates:
+  ./resolvers-types.ts:
+    config:
+      useIndexSignature: true
+    plugins:
+      - typescript
+      - typescript-resolvers
